@@ -11,6 +11,7 @@ function nuevoJuego(){
   prepararCampo();
   colocarDisco(Math.floor(Math.random()*2)+1);
 }
+
 function prepararCampo(){
   campoJuego = new Array();
 
@@ -20,4 +21,14 @@ function prepararCampo(){
       campoJuego[i].push(0);
     }
   }
+}
+
+//Esta Funcion es la que perimite dejar 
+//caer un disco en las columnas de la matriz
+
+function caidaDisco(cid,jugador){
+  actualFila = filaLibre(actualColum,jugador);
+  mover(cid,(14+actualFila*60));
+  actualJugador = jugador;
+  movimientoGanar();
 }

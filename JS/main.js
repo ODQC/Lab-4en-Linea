@@ -35,3 +35,13 @@ function filaLibre(col,player){
       }
     }
   }
+//Esta función verifica si la celda horizontal está llena o no
+  function opcColumna(){
+    var moves_array = new Array();
+    for(var i=0; i<7; i++){
+      if(campoJuego[0][i] == 0){
+        moves_array.push(i);
+      }
+    }
+    return moves_array;
+  }

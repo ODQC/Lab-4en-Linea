@@ -45,3 +45,19 @@ function filaLibre(col,player){
     }
     return moves_array;
   }
+
+//Commit se implementa metodo que analiza cual es la posible jugada de la maquina
+function analizar(){
+  var movPosibles = opcColumna();
+  var aiMoves = new Array();
+  var bloqueado;
+  var bestBlocked = 0;
+  
+  for(var i=0; i<movPosibles.length; i++){
+    for(var j=0; j<6; j++){
+      if(campoJuego[j][movPosibles[i]] != 0){
+        break;
+      }
+    }
+  }
+}

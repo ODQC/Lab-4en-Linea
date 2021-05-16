@@ -21,3 +21,17 @@ function filaLibre(col,player){
   campoJuego[i-1][col] = player;
   return i-1;
 }
+
+//Inicio de implementación del gane se debe crear el metodo 
+//obtAdyacente para ir verificando si funciona este.
+
+  function verificarVictoria(fila,col){
+    if(obtAdyacente(fila,col,0,1)+obtAdyacente(fila,col,0,-1) > 2){
+      return true;
+    } 
+    else {
+      if(obtAdyacente(fila,col,1,0) > 2){
+        return true;
+      }
+    }
+  }

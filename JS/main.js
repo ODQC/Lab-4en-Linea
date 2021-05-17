@@ -32,3 +32,12 @@ function caidaDisco(cid,jugador){
   actualJugador = jugador;
   movimientoGanar();
 }
+
+//Commit: se implementa metodos para validar los vectores que rodean la ficha inficada
+function obtAdyacente(fila,col,filaInicio,colInicio){
+  if(valorCelda(fila,col) == valorCelda(fila+filaInicio,col+colInicio)){
+    return 1+obtAdyacente(fila+filaInicio,col+colInicio,filaInicio,colInicio);
+  } else {
+    return 0;
+  }
+}

@@ -70,5 +70,21 @@ function analizar(){
         break;
       }
     }
+    campoJuego[j-1][movPosibles[i]] = 1;
+    bloqueado = obtAdyacente(j-1,movPosibles[i],0,1)+obtAdyacente(j-1,movPosibles[i],0,-1);
+    bloqueado = Math.max(bloqueado,obtAdyacente(j-1,movPosibles[i],1,0));
+    bloqueado = Math.max(bloqueado,obtAdyacente(j-1,movPosibles[i],-1,1));
+    bloqueado = Math.max(bloqueado,obtAdyacente(j-1,movPosibles[i],1,1)+obtAdyacente(j-1, movPosibles[i],-1,-1));
+    
+    if(bloqueado >= bestBlocked){
+      if(bloqueado>bestBlocked){
+        bestBlocked = bloqueado;
+        aiMoves = new Array();
+      }
+      aiMoves.push(movPosibles[i]);
+    }
+    campoJuego[j-1][movPosibles[i]] = 0;
   }
+  
+  return aiMoves;
 }

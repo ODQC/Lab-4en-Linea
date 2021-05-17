@@ -41,3 +41,12 @@ function obtAdyacente(fila,col,filaInicio,colInicio){
     return 0;
   }
 }
+
+//Commit: Verifica el valor de la celda consultada
+function valorCelda(fila,col){
+  if(campoJuego[fila] == undefined || campoJuego[fila][col] == undefined){
+    return -1;
+  } else {
+    return campoJuego[fila][col];
+  }
+}

@@ -139,3 +139,15 @@ function Disc(player) {
 function mover(quien,donde){
   document.getElementById('d'+quien).style.top = donde+'px';
 }
+
+function movimientoGanar(){
+  if(!verificarVictoria(actualFila,actualColum)){
+    colocarDisco(3-actualJugador);
+  } else {
+    var ww = actualJugador == 2 ? 'Computer' : 'Player';
+    colocarDisco(3-actualJugador);
+    alert(ww+" win!");
+    pizarra.innerHTML = "";
+    newgame();
+  }
+}

@@ -22,19 +22,30 @@ function filaLibre(col,player){
   return i-1;
 }
 
-//Inicio de implementación del gane se debe crear el metodo 
-//obtAdyacente para ir verificando si funciona este.
+//Metodo Verificar Victoria Listo
 
-  function verificarVictoria(fila,col){
-    if(obtAdyacente(fila,col,0,1)+obtAdyacente(fila,col,0,-1) > 2){
+function verificarVictoria(fila,col){
+  if(obtAdyacente(fila,col,0,1)+obtAdyacente(fila,col,0,-1) > 2){
+    return true;
+  } 
+  else {
+    if(obtAdyacente(fila,col,1,0) > 2){
       return true;
     } 
     else {
-      if(obtAdyacente(fila,col,1,0) > 2){
+      if(obtAdyacente(fila,col,-1,1)+obtAdyacente(fila,col,1,-1) > 2){
         return true;
+      } 
+      else {
+        if(obtAdyacente(fila,col,1,1)+obtAdyacente(fila,col,-1,-1) > 2){
+          return true;
+        } else {
+          return false;
+        }
       }
     }
   }
+}
 //Esta función verifica si la celda horizontal está llena o no
   function opcColumna(){
     var moves_array = new Array();

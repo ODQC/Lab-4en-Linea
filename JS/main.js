@@ -119,3 +119,6 @@ function Disc(player) {
   
 }
 
+function mover(quien,donde){
+  document.getElementById('d'+quien).style.top = donde+'px';
+}

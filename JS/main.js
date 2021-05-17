@@ -115,6 +115,23 @@ function Disc(player) {
       document.getElementById('d' + $this.id).style.top = "-55px";
     }
   }
+  document.onload = function (evt) {
+    if (actualJugador == 1) {
+      actualColum = Math.floor((evt.clientX - pizarra.offsetLeft) / 60);
+      if (actualColum < 0) { actualColum = 0; }
+      if (actualColum > 6) { actualColum = 6; }
+      document.getElementById('d' + $this.id).style.left = (14 + 60 * actualColum) + "px";
+      document.getElementById('d' + $this.id).style.top = "-55px";
+    }
+  }
+
+  document.onclick = function (evt) {
+    if (actualJugador == 1) {
+      if (opcColumna().indexOf(actualColum) != -1) {
+        caidaDisco($this.id, $this.player);
+      }
+    }
+  }
 
   
 }

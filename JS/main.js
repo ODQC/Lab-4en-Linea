@@ -88,3 +88,24 @@ function analizar(){
   
   return aiMoves;
 }
+function Disc(player) {
+  this.player = player;
+  this.color = player == 1 ? 'red' : 'yellow';
+  this.id = id.toString();
+  id++;
+
+  this.addToScene = function () {
+    pizarra.innerHTML += '<div id="d' + this.id + '" class="disco ' + this.color + '"></div>';
+    if (actualJugador == 2) {
+      //computer move
+      var possibleMoves = analizar();
+      var cpuMove = Math.floor(Math.random() * possibleMoves.length);
+      actualColum = possibleMoves[cpuMove];
+      document.getElementById('d' + this.id).style.left = (14 + 60 * actualColum) + "px";
+      caidaDisco(this.id, actualJugador);
+    }
+  }
+
+  
+}
+

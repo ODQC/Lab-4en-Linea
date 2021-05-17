@@ -50,3 +50,9 @@ function valorCelda(fila,col){
     return campoJuego[fila][col];
   }
 }
+//verifica que jugador es el que va a colocar el disco y crea un disco para colocarlo 
+function colocarDisco(player){
+  actualJugador = player;
+  var disc = new Disc(player);
+  disc.addToScene();
+}
